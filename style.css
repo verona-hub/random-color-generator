@@ -127,6 +127,7 @@ main {
   -ms-flex-align: center;
   align-items: center;
   display: -webkit-box;
+  height: 40vh;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
@@ -136,7 +137,7 @@ main {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 25vw;
+  width: 30vw;
 }
 
 h2 {
@@ -281,6 +282,7 @@ footer span {
   }
 
   .main-content {
+    height: 30vh;
     width: 50vw;
   }
 
@@ -347,11 +349,14 @@ footer span {
   .main-wrapper {
     height: 70vh;
   }
-}
 
+}
 @media screen and (max-width: 1001px) and (orientation: landscape) {
   main {
     height: 85%;
+  }
+  .main-content {
+    height: 70vh;
   }
 }
 
@@ -413,6 +418,7 @@ footer span {
 
   .main-content {
     border: 3px solid rgb(47, 52, 80);
+    height: 35vh;
     padding: 10px;
     width: 60vw;
   }
@@ -461,6 +467,11 @@ footer span {
 @media screen and (max-width: 370px) {
   .main-wrapper {
     height: 75vh;
+  }
+  
+  .main-content {
+    height: 35vh;
+    width: 65vw;
   }
 
   .footer-wrapper {
