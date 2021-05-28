@@ -1,42 +1,30 @@
-// Button Listener
+// Variable Declarations
 const button = document.getElementById('button');
+const body = document.getElementById('body');
+const rgbText = document.getElementById('rgb');
 
-button.addEventListener('click', randomColor);
+// Main function that generates a random color, changes the background into it and displays the Rgb value on screen
+const randomColor = () => {
 
+  // Generates a random number
+  const randomColorGen = "#" + Math.floor(Math.random() * 16777215).toString(16);
 
+  // Setting the background color to be the randomly generated number
+  body.style.backgroundColor = randomColorGen;
 
-// Random Color Generator
-function randomColor() {
-
-  const body = document.getElementById('body');
-
-  body.style.backgroundColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
-
-  document.getElementById('rgb').innerHTML = body.style.backgroundColor;
-
-  console.log('The background color is: ' + body.style.backgroundColor);
-
+  // Display that color inside the rgbText paragraph
+  rgbText.innerHTML = body.style.backgroundColor;
 }
 
+// The main functions fires on button click
+button.addEventListener('click', randomColor);
 
-
-// Spacebar and Enter as actionkeys
-document.addEventListener('keydown', function(event) {
-
+// The main functions fires when Spacebar or Enter are pressed on the keyboard
+document.addEventListener('keydown', event => {
   if (event.code == 'Space' || event.key == 'Enter') {
-
     randomColor();
-
   }
 });
 
-
-
-// Window prompt to copy color value
-const rgb = document.getElementById('rgb');
-
-rgb.addEventListener('click', function() {
-
-  window.prompt("If you want to copy to clipboard: press CTRL+C, then ENTER", rgb.textContent);
-
-});
+// Window prompt appears to copy color value after clicking the rgb text
+rgbText.addEventListener('click', () => window.prompt("If you want to copy the value to clipboard: press CTRL+C, then ENTER", rgbText.textContent));
