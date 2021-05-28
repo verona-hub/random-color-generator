@@ -2,6 +2,8 @@
 const button = document.getElementById('button');
 const body = document.getElementById('body');
 const rgbText = document.getElementById('rgb');
+const hexText = document.getElementById('hex_text');
+const hexValue = document.getElementById('hex_value');
 
 // Main function that generates a random color, changes the background into it and displays the Rgb value on screen
 const randomColor = () => {
@@ -12,8 +14,9 @@ const randomColor = () => {
   // Setting the background color to be the randomly generated number
   body.style.backgroundColor = randomColorGen;
 
-  // Display that color inside the rgbText paragraph
+  // Display the color value in rgb and hex
   rgbText.innerHTML = body.style.backgroundColor;
+  hexValue.innerHTML = randomColorGen;
 }
 
 // The main functions fires on button click
@@ -26,5 +29,6 @@ document.addEventListener('keydown', event => {
   }
 });
 
-// Window prompt appears to copy color value after clicking the rgb text
-rgbText.addEventListener('click', () => window.prompt("If you want to copy the value to clipboard: press CTRL+C, then ENTER", rgbText.textContent));
+// Creates a window prompt to copy color value after clicking the rgb/hex text
+rgbText.addEventListener('click', () => window.prompt("If you want to copy the RGB value to clipboard: press CTRL+C, then ENTER", rgbText.textContent));
+hexText.addEventListener('click', () => window.prompt("If you want to copy the HEX value to clipboard: press CTRL+C, then ENTER", hexValue.textContent));

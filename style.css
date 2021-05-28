@@ -1,7 +1,3 @@
-.device:root {
-  font-size: 16px;
-}
-
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -20,60 +16,60 @@ html {
      ██    ██       ██    ██      ██
 ███████    ██       ██    ███████ ███████
 */
+:root {
+  --blue: rgb(47, 52, 80);
+}
+
 body {
   background-color: rgb(233, 150, 122);
-  color: rgb(47, 52, 80);
+  color: var(--blue);
 }
 
 header,
 footer {
-  background-color: rgb(47, 52, 80);
-}
-
-.main-content {
-  background-color: #F1F1E6;
-  background-color: #FFEFCA;
-  border: 4px solid rgb(47, 52, 80);
+  background-color: var(--blue);
 }
 
 .random,
-.ve {
+.ver {
   color: rgb(255, 0, 0);
 }
 
 .color,
-.ro {
+.ona {
   color: rgb(255, 254, 96);
 }
 
 .generator,
-.na {
+.hub {
   color: rgb(58, 242, 35);
 }
 
 h1 {
   font-size: 2rem;
   font-weight: 300;
+  text-transform: uppercase;
 }
 
 h2 {
-  font-size: 2.6vw;
+  font-size: 1.8rem;
 }
 
-p.rgb {
-  padding: 0 0 10px;
+.main-content {
+  background-color: #FFEFCA;
+  border: 4px solid var(--blue);
+  border-radius: 16px;
 }
 
-p.rgb,
-footer p {
-  font-size: 2vw;
+p {
+  font-size: 1.6rem;
 }
 
 .btn {
-  background-color: rgb(47, 52, 80);
-  border: 2px solid rgb(47, 52, 80);
+  background-color: var(--blue);
+  border: none;
   color: whitesmoke;
-  font-size: 1.4vw;
+  font-size: 1.3rem;
 }
 
 /*
@@ -83,7 +79,7 @@ footer p {
 ██  ██  ██ ██   ██ ██ ██  ██ ██
 ██      ██ ██   ██ ██ ██   ████
 */
-nav a {
+nav {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -105,54 +101,31 @@ nav img {
   margin: 5px 5px 0 10px;
 }
 
-h1 {
-  padding: 0 20px 0 0;
-  text-transform: uppercase;
-}
-
 main {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  height: 100%;
 }
 
 .main-content {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  height: 40vh;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 30vw;
+  height: 300px;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  position: relative;
+  top: 20vh;
+  width: 400px;
 }
 
-h2 {
-  margin: 2vw 0;
-}
-
-.btn-wrapper {
-  margin: 2vw auto 2.5vw;
+main p {
+  margin: 0 auto;
+  width: max-content;
 }
 
 .btn {
   border-radius: 4px;
   cursor: pointer;
-  margin-top: 0;
-  padding: 10px;
+  font-size: 1.3rem;
+  padding: 15px 30px;
 }
 
 .btn:hover:active {
@@ -168,49 +141,27 @@ h2 {
 ██      ██    ██ ██    ██    ██    ██      ██   ██
 ██       ██████   ██████     ██    ███████ ██   ██
 */
-footer,
-.footer-wrapper,
-footer p {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
 footer {
   bottom: 0;
-  overflow: hidden;
   position: absolute;
   width: 100%;
 }
 
-.footer-wrapper {
-  padding: 10px;
-}
-
 footer a {
-  display: block;
-  margin: 0 auto;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  padding: 10px;
   text-decoration: none;
 }
 
 .footer-wrapper img {
-  height: 60px;
-  margin-right: 5px;
   width: 60px;
 }
 
-footer p {
-  margin: 0 1.5vw 0.4vw 0;
-}
-
-footer span {
-  margin-right: 2px;
+.footer-text-wrapper p {
+  display: flex;
+  margin-left: 5px;
 }
 
 /*
@@ -221,30 +172,8 @@ footer span {
 ██      ██ ███████ ██████  ██ ██   ██
 */
 @media screen and (min-width: 1301px) {
-  body {
-    height: 100vh;
-  }
-
-  .main-wrapper {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 80vh;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-
-  h1 {
-    margin-right: 30px;
-  }
-
   .btn-wrapper:hover .btn {
     background-color: rgba(55, 62, 107, 0.9);
-    color: whitesmoke;
   }
 }
 
@@ -257,71 +186,21 @@ footer span {
 */
 @media screen and (max-width: 1300px) {
   .main-content {
-    border: 5px solid rgb(47, 52, 80);
-    padding: 20px;
-  }
-
-  .btn {
-    font-size: 1rem;
-    padding: 20px 40px;
+    border: 5px solid var(--blue);
   }
 }
 
 @media screen and (max-width: 1300px) and (orientation: portrait) {
-  .main-wrapper {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 100vw;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-
-  .main-content {
-    height: 30vh;
-    width: 50vw;
-  }
-
   h1 {
     font-size: 1.6rem;
   }
 
-  h2 {
-    font-size: 3.6vw;
-  }
-
-  p,
-  footer p {
-    font-size: 3vw;
+  p {
+    font-size: 1.6rem;
   }
 }
 
-@media screen and (max-width: 1300px) and (orientation: landscape) {
-  .main-wrapper {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 60vw;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-
-  .main-content {
-    width: 40vw;
-  }
-
-  .footer-wrapper {
-    padding: 0;
-  }
-}
+@media screen and (max-width: 1300px) and (orientation: landscape) {}
 
 /*
  ██      ██████       ██████       ██████      ██████  ██   ██
@@ -330,42 +209,23 @@ footer span {
  ██     ████  ██     ████  ██     ████  ██     ██       ██ ██
  ██      ██████       ██████       ██████      ██      ██   ██
 */
-@media screen and (max-width: 1001px) {
-  h2 {
-    margin-top: 20px;
-  }
-
-  .rgb {
-    margin: 10px;
-    padding: 10px;
-  }
-
-  .btn {
-    margin: 10px;
-  }
-}
-
-@media screen and (max-width: 1001px) and (orientation: portrait) {
-  .main-wrapper {
-    height: 70vh;
-  }
-}
-
-@media screen and (max-width: 1001px) and (orientation: landscape) {
-  main {
-    height: 85%;
-  }
-
-  .main-content {
-    height: 70vh;
-  }
-}
-
-@media screen and (max-height: 700px) and (max-width: 1000px) and (orientation: landscape) {
+@media screen and (max-width: 1100px) and (orientation: lanscape) {
   footer {
     position: relative;
   }
 }
+
+@media screen and (max-width: 1001px) {}
+
+@media screen and (max-width: 1001px) and (orientation: portrait) {
+  .main-content {
+    top: 15vh;
+  }
+}
+
+@media screen and (max-width: 1001px) and (orientation: landscape) {}
+
+@media screen and (max-height: 700px) and (max-width: 1000px) and (orientation: landscape) {}
 
 /*
  ██████  ██   ██  ██████      ██████  ██   ██
@@ -375,16 +235,6 @@ footer span {
  ██████       ██  ██████      ██      ██   ██
 */
 @media screen and (max-width: 640px) and (orientation: portrait) {
-  body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
-
-  main {
-    flex: 1 0 auto;
-  }
-
   .footer-wrapper img {
     height: 60px;
   }
@@ -393,7 +243,7 @@ footer span {
 @media screen and (max-width: 700px) and (orientation: landscape) {
   .btn {
     font-size: 1rem;
-    padding: 10px 60px;
+    padding: 10px 40px;
   }
 }
 
@@ -414,44 +264,21 @@ footer span {
     margin: 0;
   }
 
-  .main-wrapper {
-    height: 75vh;
-  }
-
   .main-content {
-    border: 3px solid rgb(47, 52, 80);
-    height: 35vh;
-    padding: 10px;
-    width: 60vw;
+    border: 3px solid var(--blue);
+    width: 250px;
   }
 
   .btn {
     font-size: 1rem;
-    margin: 10px 0;
-    padding: 20px 40px;
-  }
-
-  .footer-wrapper {
-    padding: 10px 0;
   }
 
   h2 {
-    font-size: 5.6vw;
-    margin: 20px 10px 10px;
+    font-size: 1.3rem;
   }
 
-  p.rgb {
-    margin: 10px;
-    padding: 10px;
-  }
-
-  p.rgb,
-  footer p {
-    font-size: 5vw;
-  }
-
-  footer span {
-    margin: 0;
+  p {
+    font-size: 1.2rem;
   }
 }
 
@@ -463,38 +290,8 @@ footer span {
 ██████         ██        ██████      ██      ██   ██
 */
 @media screen and (max-width: 370px) {
-  .main-wrapper {
-    height: 75vh;
-  }
-
-  .main-content {
-    height: 35vh;
-    width: 65vw;
-  }
-
-  .footer-wrapper {
-    padding: 3vw 5vw 3vw 0;
-  }
-
   .btn {
-    padding: 10px;
-  }
-
-  html {
-    height: 100%;
-  }
-
-  body {
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    position: relative;
-    min-height: 100%;
-  }
-
-  .footer-wrapper {}
-
-  footer {
-    position: static;
+    padding: 15px 40px;
   }
 
   footer p {

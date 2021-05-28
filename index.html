@@ -15,42 +15,41 @@
 <body id="body">
   <header>
     <nav>
-      <a href="#">
-        <div class="icon-wrapper">
-          <img src="img/nav-icon.png" alt="color wheel logo">
-        </div>
-        <h1>
-          <span class="random"> Random </span>
-          <span class="color"> color </span>
-          <span class="generator"> generator </span>
-        </h1>
-      </a>
+      <div class="icon-wrapper">
+        <img src="img/nav-icon.png" alt="color wheel logo">
+      </div>
+      <h1>
+        <span class="random"> Random </span>
+        <span class="color"> color </span>
+        <span class="generator"> generator </span>
+      </h1>
     </nav>
   </header>
 
   <main>
-    <div class="main-wrapper">
-      <div class="main-content">
-        <h2> The color is: </h2>
-        <p id="rgb" class="rgb"> rgb&lpar;233, 150, 122&rpar; </p>
-        <div class="btn-wrapper">
-          <button id="button" class="btn" type="button" name="button"> Click me </button>
-        </div>
+    <div class="main-content">
+      <h2> The background color is: </h2>
+      <p id="rgb"> rgb&lpar;233, 150, 122&rpar; </p>
+      <p id="hex_text"> hex <span id="hex_value">#e9967a</span> </p>
+      <div class="btn-wrapper">
+        <button id="button" class="btn" type="button" name="button"> Click me </button>
       </div>
     </div>
   </main>
 
   <footer>
-    <a href="https://github.com/verona-hub">
-      <div class="footer-wrapper">
+    <div class="footer-wrapper">
+      <a href="https://github.com/verona-hub/random-color-generator" target="_blank">
         <img class="github" src="img/icon-github.svg" alt="github icon">
-        <p>
-          <span class="ve">ve</span>
-          <span class="ro">ro</span>
-          <span class="na">na</span>
-        </p>
-      </div>
-    </a>
+        <div class="footer-text-wrapper">
+          <p>
+            <span class="ver">ver</span>
+            <span class="ona">ona</span>
+            <span class="hub">-hub</span>
+          </p>
+        </div>
+      </a>
+    </div>
   </footer>
 
   <script src="script.js"></script>
