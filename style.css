@@ -32,17 +32,17 @@ footer {
 
 .random,
 .ver {
-  color: rgb(255, 0, 0);
+  color: rgb(58, 242, 35);
 }
 
 .color,
 .ona {
-  color: rgb(255, 254, 96);
+  color: whitesmoke;
 }
 
 .generator,
 .hub {
-  color: rgb(58, 242, 35);
+  color: rgb(255, 0, 0);
 }
 
 h1 {
