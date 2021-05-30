@@ -1,11 +1,19 @@
 // Variable Declarations
-const button = document.getElementById('button');
+// Body
 const body = document.getElementById('body');
-const rgbText = document.getElementById('rgb');
+const backgroundColor = body.style.backgroundColor;
+
+// Rgb and Hex values
+let rgbText = document.getElementById('rgb');
+rgbText.value = rgbText.placeholder;
+
 const hexText = document.getElementById('hex_text');
 const hexValue = document.getElementById('hex_value');
+
+// Copy and button
 const copy = document.getElementById('copy');
-rgbText.value = "rgb(233, 150, 122)";
+const button = document.getElementById('button');
+
 
 // Main function that generates a random color, changes the background into it and displays the Rgb value on screen
 const randomColor = () => {
@@ -18,25 +26,23 @@ const randomColor = () => {
 
   // Display the color value in rgb and hex
   // rgbText.innerHTML = body.style.backgroundColor;
-  rgbText.innerHtml = body.style.backgroundColor;
-  console.log(rgbText);
-  rgbText.placeholder = rgbText.innerHtml;
-  rgbText.value = rgbText.placeholder;
-  
+  rgbText.value = body.style.backgroundColor;
+  rgbText.placeholder = rgbText.value;
+
   hexValue.innerHTML = randomColorGen;
-  
-  
-  
-  
-  const copyToClip = () => {
-    rgbText.select();
-    rgbText.setSelectionRange(0, 9999);
-    document.execCommand('copy');
-  }
-  
-  copy.addEventListener('click', copyToClip);
-  
 }
+
+
+
+const copyToClip = () => {
+  rgbText.select();
+  rgbText.setSelectionRange(0, 9999);
+  document.execCommand('copy');
+}
+copy.addEventListener('click', copyToClip);
+
+
+
 
 // The main functions fires on button click
 button.addEventListener('click', randomColor);
@@ -47,40 +53,3 @@ document.addEventListener('keydown', event => {
     randomColor();
   }
 });
-
-// Creates a window prompt to copy color value after clicking the rgb/hex text
-/*rgbText.addEventListener('click', () => window.prompt("If you want to copy the RGB value to clipboard: press CTRL+C, then ENTER", rgbText.textContent));
-hexText.addEventListener('click', () => window.prompt("If you want to copy the HEX value to clipboard: press CTRL+C, then ENTER", hexValue.textContent));*/
-
-
-// let areaText = document.getElementById('rgb');
-
-// console.log(rgbText.placeholder);
-
-
-
-
-
-/*const area = document.getElementById('area');
-console.log(area.innerHTML);
-
-
-const copyToClip = () => {
-  area.select();
-  area.setSelectionRange(0, 9999);
-  document.execCommand('copy');
-}
-
-copy.addEventListener('click', copyToClip);*/
-
-
-/*const areaText = document.getElementById('area');
-
-const copyToClip = () => {
-  console.log(areaText.value);
-  areaText.select();
-  areaText.setSelectionRange(0, 9999)
-  document.execCommand('copy');
-}
-
-copy.addEventListener('click', copyToClip);*/

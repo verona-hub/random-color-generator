@@ -61,6 +61,18 @@ h2 {
   border-radius: 16px;
 }
 
+input,
+input:focus {
+  background-color: #FFEFCA !important;
+  color: var(--blue);
+  font-size: 1.6rem;
+}
+
+.hex_value {
+  text-transform: uppercase;
+}
+
+
 p {
   font-size: 1.6rem;
 }
@@ -114,6 +126,21 @@ main {
   position: relative;
   top: 20vh;
   width: 400px;
+}
+
+input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  background-color: #eee;
+  margin: 0 auto;
+  text-align: center;
+  width: max-content;
+}
+
+input:focus {
+  outline: none;
 }
 
 main p {
