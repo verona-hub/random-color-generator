@@ -4,6 +4,9 @@
 const body = document.getElementById('body');
 // Rgb and Hex color values
 const inputs = document.querySelectorAll('input');
+const rgb = document.getElementById('rgb');
+const hex = document.getElementById('hex');
+const tooltiptext = document.getElementById('tooltiptext');
 // Button
 const button = document.getElementById('button');
 
@@ -18,7 +21,6 @@ const randomColorGen = () => {
 
   // Change the background color to the randomly generated number
   body.style.backgroundColor = randomColor;
-
   // Display rgb color value on screen
   rgb.value = body.style.backgroundColor;
   // Display hex color value on screen
@@ -35,8 +37,11 @@ const copyToClipboard = () => {
       const targetValue = e.target.value;
       // Create a new element
       const element = document.createElement('textarea');
+
       // Copy the clicked value to the new element
-      element.value = targetValue;
+      element.value = targetValue.toUpperCase();
+
+
       // Add the new element to the document
       document.body.appendChild(element);
       // Select and copy the value
@@ -44,6 +49,12 @@ const copyToClipboard = () => {
       document.execCommand('copy');
       // Remove the new element from the body
       document.body.removeChild(element);
+      // Show the tooltip
+      tooltiptext.style.visibility = 'visible';
+      // Remove the tooltip
+      setTimeout(function() {
+        tooltiptext.style.visibility = 'hidden';
+      }, 2000);
     });
   });
 };
@@ -55,4 +66,4 @@ document.addEventListener('click', copyToClipboard);
 button.addEventListener('click', randomColorGen);
 
 // The main functions fires when Spacebar or Enter are pressed on the keyboard
-document.addEventListener('keydown', event => (event.code == 'Space' || event.key == 'Enter') && randomColorGen());
+document.addEventListener('keyup', event => (event.code == 'Space' || event.key == 'Enter') && randomColorGen());

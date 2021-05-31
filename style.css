@@ -23,12 +23,14 @@ body {
 */
 :root {
   --blue: rgb(47, 52, 80);
+  --cream: rgba(255, 239, 202, 1);
 }
 
 body {
   background-color: rgb(233, 150, 122);
   color: var(--blue);
   font-family: 'Montserrat', sans-serif;
+  transition: background-color ease 400ms;
 }
 
 header,
@@ -62,27 +64,20 @@ h2 {
 }
 
 .main-content {
-  background-color: #FFEFCA;
+  background-color: var(--cream);
   border: 4px double var(--blue);
   border-radius: 16px;
 }
 
 input,
 input:focus {
-  background-color: #FFEFCA !important;
+  background-color: var(--cream);
   color: var(--blue);
   font-size: 1.6rem;
 }
 
 input {
-  border-style: dashed;
-  border-color: var(--blue);
-  cursor: crosshair;
   font-family: 'Montserrat', sans-serif;
-  margin: 0 auto;
-  padding: 5px;
-  text-align: center;
-  /* width: max-content; */
 }
 
 input:focus {
@@ -152,6 +147,19 @@ nav img {
   width: 550px;
 }
 
+input {
+  border-style: dashed;
+  border-color: var(--blue);
+  cursor: crosshair;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 auto;
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 380px;
+  /* width: max-content; */
+}
+
 main p {
   margin: 0 auto;
   width: max-content;
@@ -161,6 +169,33 @@ main p {
   -webkit-transform: translateY(2px);
   -ms-transform: translateY(2px);
   transform: translateY(2px);
+}
+
+/*
+████████  ██████   ██████  ██   ████████ ██ ██████
+   ██    ██    ██ ██    ██ ██      ██    ██ ██   ██
+   ██    ██    ██ ██    ██ ██      ██    ██ ██████
+   ██    ██    ██ ██    ██ ██      ██    ██ ██
+   ██     ██████   ██████  ███████ ██    ██ ██
+*/
+.tooltiptext {
+  visibility: hidden;
+  background-color: var(--cream);
+  color: black;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 15px 0;
+  left: 0;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 380px;
+  z-index: 1;
 }
 
 /*
@@ -248,7 +283,8 @@ footer a {
 
 @media screen and (max-width: 1001px) and (orientation: landscape) {
   body {
-    min-height: 700px;
+    /* min-height: 700px; */
+    /* min-height: 100vh; */
   }
 }
 

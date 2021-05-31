@@ -28,17 +28,23 @@
     </nav>
   </header>
 
-<main>
-  <div class="main-content">
-    <h2> The background color is: </h2>
-    <input type="text" name="rgb" id="rgb" value="rgb(233, 150, 122)" autocomplete=off>
-    <input type="text" name="hex" id="hex" value="#e9967a" autocomplete=off>
+  <main>
+    <div class="main-content">
+      <h2> The background color is: </h2>
 
-    <div class="btn-wrapper">
-      <button id="button" class="btn" type="button" name="button"> Generate a color </button>
+      <div class="tooltiptext" id="tooltiptext">
+        <span> Value copied to clipboard! </span>
+      </div>
+
+      <input type="text" name="rgb" id="rgb" value="rgb(233, 150, 122)" autocomplete=off READONLY>
+      <span> *click inside the dotted box to copy the value </span>
+      <input type="text" name="hex" id="hex" class="hex" value="#e9967a" autocomplete=off READONLY>
+
+      <div class="btn-wrapper">
+        <button id="button" class="btn" type="button" name="button"> Generate a color </button>
+      </div>
     </div>
-  </div>
-</main>
+  </main>
 
   <footer>
     <div class="footer-wrapper">
