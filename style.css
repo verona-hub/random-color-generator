@@ -52,12 +52,12 @@ h1 {
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 .main-content {
   background-color: #FFEFCA;
-  border: 4px solid var(--blue);
+  border: 4px double var(--blue);
   border-radius: 16px;
 }
 
@@ -66,6 +66,20 @@ input:focus {
   background-color: #FFEFCA !important;
   color: var(--blue);
   font-size: 1.6rem;
+}
+
+input {
+  border-style: dashed;
+  border-color: var(--blue);
+  cursor: crosshair;
+  margin: 0 auto;
+  padding: 5px;
+  text-align: center;
+  /* width: max-content; */
+}
+
+input:focus {
+  outline: none;
 }
 
 .hex_value {
@@ -80,8 +94,11 @@ p {
 .btn {
   background-color: var(--blue);
   border: none;
+  border-radius: 4px;
   color: whitesmoke;
-  font-size: 1.3rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 15px 30px;
 }
 
 /*
@@ -120,39 +137,17 @@ main {
 .main-content {
   display: flex;
   flex-direction: column;
-  height: 300px;
+  height: 400px;
   justify-content: space-evenly;
   margin: 0 auto;
   position: relative;
   top: 20vh;
-  width: 400px;
-}
-
-input {
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
-  background-color: #eee;
-  margin: 0 auto;
-  text-align: center;
-  width: max-content;
-}
-
-input:focus {
-  outline: none;
+  width: 550px;
 }
 
 main p {
   margin: 0 auto;
   width: max-content;
-}
-
-.btn {
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1.3rem;
-  padding: 15px 30px;
 }
 
 .btn:hover:active {
@@ -213,7 +208,7 @@ footer a {
 */
 @media screen and (max-width: 1300px) {
   .main-content {
-    border: 5px solid var(--blue);
+    border: 5px double var(--blue);
   }
 }
 
@@ -253,6 +248,14 @@ footer a {
 @media screen and (max-width: 1001px) and (orientation: landscape) {}
 
 @media screen and (max-height: 700px) and (max-width: 1000px) and (orientation: landscape) {}
+  
+  
+  @media screen and (max-width: 700px) and (orientation: landscape) {
+    .btn {
+      font-size: 1rem;
+      padding: 10px 40px;
+    }
+  }
 
 /*
  ██████  ██   ██  ██████      ██████  ██   ██
@@ -261,18 +264,19 @@ footer a {
 ██    ██      ██ ████  ██     ██       ██ ██
  ██████       ██  ██████      ██      ██   ██
 */
+@media screen and (max-width: 640px) {
+  input,
+  input:focus {
+    font-size: 1.2rem;
+  }
+}
+
 @media screen and (max-width: 640px) and (orientation: portrait) {
   .footer-wrapper img {
     height: 60px;
   }
 }
 
-@media screen and (max-width: 700px) and (orientation: landscape) {
-  .btn {
-    font-size: 1rem;
-    padding: 10px 40px;
-  }
-}
 
 /*
 ██   ██      █████       ██████      ██████  ██   ██

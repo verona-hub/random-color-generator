@@ -2,27 +2,27 @@
 
 // Body
 const body = document.getElementById('body');
-
 // Rgb and Hex color values
-let inputs = document.querySelectorAll('input');
-
-// Buttons
+const inputs = document.querySelectorAll('input');
+// Button
 const button = document.getElementById('button');
 
+// Main function:
+// a) generate a random color
+// b) change the background into it
+// c) display the Rgb + hex value on screen
+const randomColorGen = () => {
 
-// Main function that generates a random color, changes the background into it and displays the Rgb + hex value on screen
-const randomColor = () => {
+  // Generate a random number
+  const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
 
-  // Generates a random number
-  const randomColorGen = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  // Change the background color to the randomly generated number
+  body.style.backgroundColor = randomColor;
 
-  // Setting the background color to be the randomly generated number
-  body.style.backgroundColor = randomColorGen;
-
-  // Display rgb color value
+  // Display rgb color value on screen
   rgb.value = body.style.backgroundColor;
-  // Display hex color value
-  hex.value = randomColorGen;
+  // Display hex color value on screen
+  hex.value = randomColor;
 }
 
 // Function that copies the rgb or hex value to the clipboard
@@ -31,11 +31,11 @@ const copyToClipboard = () => {
   inputs.forEach(input => {
     // For each input add a click event listener
     input.addEventListener('click', e => {
-      // Get the color value of the input
-      let targetValue = e.target.value;
-      // Create an element to append
+      // Get the color value of the clicked input
+      const targetValue = e.target.value;
+      // Create a new element
       const element = document.createElement('textarea');
-      // Copy the click target value to the new element
+      // Copy the clicked value to the new element
       element.value = targetValue;
       // Add the new element to the document
       document.body.appendChild(element);
@@ -47,15 +47,12 @@ const copyToClipboard = () => {
     });
   });
 };
-// Add a click event listener to the body, to listen for a click on rgb or hex
+
+// Add a click event listener to the body; the clicked value is copied to the clipboard
 document.addEventListener('click', copyToClipboard);
 
-// The main functions fires on button click
-button.addEventListener('click', randomColor);
+// The main function fires on button click
+button.addEventListener('click', randomColorGen);
 
 // The main functions fires when Spacebar or Enter are pressed on the keyboard
-document.addEventListener('keydown', event => {
-  if (event.code == 'Space' || event.key == 'Enter') {
-    randomColor();
-  }
-});
+document.addEventListener('keydown', event => (event.code == 'Space' || event.key == 'Enter') && randomColorGen());
