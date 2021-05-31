@@ -1,21 +1,16 @@
 // Variable Declarations
+
 // Body
 const body = document.getElementById('body');
-const backgroundColor = body.style.backgroundColor;
 
-// Rgb and Hex values
-let rgbText = document.getElementById('rgb');
-rgbText.value = rgbText.placeholder;
+// Rgb and Hex color values
+let inputs = document.querySelectorAll('input');
 
-const hexText = document.getElementById('hex_text');
-const hexValue = document.getElementById('hex_value');
-
-// Copy and button
-const copy = document.getElementById('copy');
+// Buttons
 const button = document.getElementById('button');
 
 
-// Main function that generates a random color, changes the background into it and displays the Rgb value on screen
+// Main function that generates a random color, changes the background into it and displays the Rgb + hex value on screen
 const randomColor = () => {
 
   // Generates a random number
@@ -24,25 +19,36 @@ const randomColor = () => {
   // Setting the background color to be the randomly generated number
   body.style.backgroundColor = randomColorGen;
 
-  // Display the color value in rgb and hex
-  // rgbText.innerHTML = body.style.backgroundColor;
-  rgbText.value = body.style.backgroundColor;
-  rgbText.placeholder = rgbText.value;
-
-  hexValue.innerHTML = randomColorGen;
+  // Display rgb color value
+  rgb.value = body.style.backgroundColor;
+  // Display hex color value
+  hex.value = randomColorGen;
 }
 
-
-
-const copyToClip = () => {
-  rgbText.select();
-  rgbText.setSelectionRange(0, 9999);
-  document.execCommand('copy');
-}
-copy.addEventListener('click', copyToClip);
-
-
-
+// Function that copies the rgb or hex value to the clipboard
+const copyToClipboard = () => {
+  // Loop through the two inputs
+  inputs.forEach(input => {
+    // For each input add a click event listener
+    input.addEventListener('click', e => {
+      // Get the color value of the input
+      let targetValue = e.target.value;
+      // Create an element to append
+      const element = document.createElement('textarea');
+      // Copy the click target value to the new element
+      element.value = targetValue;
+      // Add the new element to the document
+      document.body.appendChild(element);
+      // Select and copy the value
+      element.select();
+      document.execCommand('copy');
+      // Remove the new element from the body
+      document.body.removeChild(element);
+    });
+  });
+};
+// Add a click event listener to the body, to listen for a click on rgb or hex
+document.addEventListener('click', copyToClipboard);
 
 // The main functions fires on button click
 button.addEventListener('click', randomColor);
