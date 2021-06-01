@@ -37,11 +37,8 @@ const copyToClipboard = () => {
       const targetValue = e.target.value;
       // Create a new element
       const element = document.createElement('textarea');
-
       // Copy the clicked value to the new element
       element.value = targetValue.toUpperCase();
-
-
       // Add the new element to the document
       document.body.appendChild(element);
       // Select and copy the value
@@ -52,7 +49,7 @@ const copyToClipboard = () => {
       // Show the tooltip
       tooltiptext.style.visibility = 'visible';
       // Remove the tooltip
-      setTimeout(function() {
+      setTimeout(() => {
         tooltiptext.style.visibility = 'hidden';
       }, 2000);
     });
