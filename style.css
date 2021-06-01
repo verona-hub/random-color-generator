@@ -24,12 +24,18 @@ body {
 :root {
   --blue: rgb(47, 52, 80);
   --cream: rgba(255, 239, 202, 1);
+  --green_light: rgb(58, 242, 35);
+  --green: rgb(24, 142, 10);
+  --red: rgb(255, 0, 0);
+  --whitesmoke: rgb(245, 245, 245);
 }
 
 body {
   background-color: rgb(233, 150, 122);
   color: var(--blue);
   font-family: 'Montserrat', sans-serif;
+  -webkit-transition: background-color ease 400ms;
+  -o-transition: background-color ease 400ms;
   transition: background-color ease 400ms;
 }
 
@@ -40,17 +46,17 @@ footer {
 
 .random,
 .ver {
-  color: rgb(58, 242, 35);
+  color: var(--green_light);
 }
 
 .color,
 .ona {
-  color: whitesmoke;
+  color: var(--whitesmoke);
 }
 
 .generator,
 .hub {
-  color: rgb(255, 0, 0);
+  color: var(--red);
 }
 
 h1 {
@@ -64,8 +70,6 @@ h1 {
 h2 {
   font-size: 2rem;
 }
-
-main {}
 
 .main-content {
   background-color: var(--cream);
@@ -96,7 +100,7 @@ input:focus {
   background-color: var(--blue);
   border: none;
   border-radius: 4px;
-  color: whitesmoke;
+  color: var(--whitesmoke);
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
@@ -143,10 +147,17 @@ nav img {
 }
 
 .main-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 450px;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin: 0 auto;
   margin-top: 15vh;
   width: 550px;
@@ -161,16 +172,21 @@ input {
   padding: 10px;
   text-align: center;
   text-transform: uppercase;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   width: 380px;
 }
 
 .copy-text {
-  color: red;
+  color: var(--red);
 }
 
 main p {
   margin: 0 auto;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
 }
 
@@ -190,7 +206,7 @@ main p {
 .tooltiptext {
   visibility: hidden;
   background-color: var(--cream);
-  color: black;
+  color: var(--green);
   border-radius: 6px;
   font-size: 1.2rem;
   font-weight: 600;
@@ -221,9 +237,15 @@ footer {
 }
 
 footer a {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 10px;
   text-decoration: none;
 }
@@ -233,6 +255,8 @@ footer a {
 }
 
 .footer-text-wrapper p {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-left: 5px;
 }
@@ -243,6 +267,13 @@ footer a {
 ██ ████ ██ █████   ██   ██ ██ ███████
 ██  ██  ██ ██      ██   ██ ██ ██   ██
 ██      ██ ███████ ██████  ██ ██   ██
+*/
+/*
+██████  ███████ ███████ ██   ██ ████████  ██████  ██████
+██   ██ ██      ██      ██  ██     ██    ██    ██ ██   ██
+██   ██ █████   ███████ █████      ██    ██    ██ ██████
+██   ██ ██           ██ ██  ██     ██    ██    ██ ██
+██████  ███████ ███████ ██   ██    ██     ██████  ██
 */
 @media screen and (min-width: 1301px) {
   .btn-wrapper:hover .btn {

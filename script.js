@@ -6,7 +6,8 @@ const body = document.getElementById('body');
 const inputs = document.querySelectorAll('input');
 const rgb = document.getElementById('rgb');
 const hex = document.getElementById('hex');
-const tooltiptext = document.getElementById('tooltiptext');
+const copyText = document.querySelector('.copy-text');
+const tooltipText = document.getElementById('tooltiptext');
 // Button
 const button = document.getElementById('button');
 
@@ -21,9 +22,9 @@ const randomColorGen = () => {
 
   // Change the background color to the randomly generated number
   body.style.backgroundColor = randomColor;
-  // Display rgb color value on screen
+  // Display the rgb color value on screen
   rgb.value = body.style.backgroundColor;
-  // Display hex color value on screen
+  // Display the hex color value on screen
   hex.value = randomColor;
 }
 
@@ -46,11 +47,15 @@ const copyToClipboard = () => {
       document.execCommand('copy');
       // Remove the new element from the body
       document.body.removeChild(element);
+      // Remove the copy-text
+      copyText.style.visibility = 'hidden';
       // Show the tooltip
-      tooltiptext.style.visibility = 'visible';
-      // Remove the tooltip
+      tooltipText.style.visibility = 'visible';
+      // Remove the tooltip after 2s
       setTimeout(() => {
-        tooltiptext.style.visibility = 'hidden';
+        tooltipText.style.visibility = 'hidden';
+        // Bring back the copy-text
+        copyText.style.visibility = 'visible';
       }, 2000);
     });
   });
