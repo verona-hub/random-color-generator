@@ -4,4 +4,4 @@
 
 A website that generates a random color.
 
-![](https://github.com/verona-hub/random-color-generator/tree/master/img/screenshot.png)
+![](https://github.com/verona-hub/random-color-generator/blob/master/img/screenshot.png)
